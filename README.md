@@ -1,3 +1,7 @@
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Description
+
 The purpose of this app is to output the top 20 most frequently ordered pizza topping combinations found in "pizzas.json". 
 See output below.
 
@@ -22,8 +26,6 @@ See output below.
 18. cheddar cheese (95)
 19. italian sausage, pepperoni (85)
 20. pineapple (79)
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
