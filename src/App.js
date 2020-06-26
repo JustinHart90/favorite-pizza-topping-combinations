@@ -1,24 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import List from './Components/List';
+import PizzasJson from './Data/pizzas.json';
+import GetCombinations from './Functions/GetCombinations';
 
 function App() {
+  const [combinations, setCombinations] = useState([]);
+  
+  // componentDidMount
+  useEffect(() => {
+    // Output the top 20 most frequently ordered pizza topping combinations found in "PizzasJson"
+    const favCombinations = GetCombinations(PizzasJson);
+    setCombinations(favCombinations);
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h2>Favorite Pizza Topping Combinations</h2>
+      <List combinations={combinations} />
     </div>
   );
 }
