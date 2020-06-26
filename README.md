@@ -1,3 +1,5 @@
+The purpose of this app is to output the top 20 most frequently ordered pizza topping combinations found in "pizzas.json"
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
