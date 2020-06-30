@@ -1,7 +1,7 @@
 export default function GetCombinations(ordersArray) {
     // Cache the count of each topping combination 
     const CountByToppingCombination = ordersArray.reduce((acc, curr) => {
-        if (!curr || !curr.toppings) {
+        if (!curr.toppings) {
             return acc;
         }
 
@@ -21,13 +21,12 @@ export default function GetCombinations(ordersArray) {
 
     // sort counts of each combination and get the top 20
     const topCounts = Object.values(CountByToppingCombination).sort((a,b) => b-a).slice(0, 20);
-    console.log('topCounts: ', topCounts);
 
     // get the top 20 topping combinations
-    var topCombinations = Object.keys(CountByToppingCombination).filter((combo) => {
+    const topCombinations = Object.keys(CountByToppingCombination).filter((combo) => {
         // check if topping combination has a count that is in the "topCounts" array
         let comboCount = CountByToppingCombination[combo]
-        ,   isComboTopCount = (comboCount && topCounts.indexOf(comboCount) !== -1);
+        ,   isComboTopCount = (topCounts.indexOf(comboCount) !== -1);
 
         return isComboTopCount;
     });

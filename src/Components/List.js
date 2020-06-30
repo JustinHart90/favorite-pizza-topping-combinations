@@ -2,15 +2,13 @@ import React from 'react';
 import ListItem from './List-Item';
 
 function List(props) {
-    const topCombinations = props.combinations;
-
-    const listItems = topCombinations.map((combo) => {
-        let idx = topCombinations.indexOf(combo)
-        ,   key = idx.toString()
-        ,   rank = (++idx).toString();
-        
+    const listItems = props.combinations.map((combo, index) => {
         return (
-            <ListItem key={key} rank={rank} combination={combo}/>
+            <ListItem
+                key={index.toString()}
+                toppings={combo.toppings}
+                count={combo.count}
+            />
         );
     });
 

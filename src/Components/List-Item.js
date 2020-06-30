@@ -2,7 +2,7 @@ import React from 'react';
 
 function ListItem(props) {
     return (
-        <li>{props.combination.toppings} ({props.combination.count})</li>
+        <li>{props.toppings} ({props.count})</li>
     );
 }
 
